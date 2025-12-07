@@ -1,0 +1,1 @@
+SystemD Unit file and Python script for implementing a Raspberry PI RFID reader for Home Assistant Tags. RFID reader needs to output text as keyboard and end the output with the enter command. The script needs to be executable for the systemd service to run
