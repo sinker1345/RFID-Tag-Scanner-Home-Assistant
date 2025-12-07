@@ -1,0 +1,24 @@
+[Unit]
+Description=RFID Reader to Home Assistant
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/jutebox.py
+WorkingDirectory=/home/pi
+User=pi
+Restart=on-failure
+RestartSec=2
+
+# Optional: improves reliability when piping input devices
+#StandardInput=tty
+#StandardOutput=journal
+#StandardError=journal
+
+# Ensure service has access to /dev/input devices
+#AmbientCapabilities=CAP_SYS_RAWIO
+#CapabilityBoundingSet=CAP_SYS_RAWIO
+
+[Install]
+WantedBy=multi-user.target
